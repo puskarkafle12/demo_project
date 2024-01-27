@@ -13,13 +13,13 @@
     <div class="container">
 
         <div class="form-box">
-            <h1>
+            <h1 id="title">
                 Sign Up
             </h1>
             <form action="">
 
                 <div class="input-group">
-                    <div class="input-field">
+                    <div class="input-field" id="nameField">
                         <i class="fa-solid fa-user"></i>
                         <input type="text" name="name" placeholder="name">
                     </div>
@@ -34,13 +34,35 @@
                 </div>
                 <p>Lost Password <a href="#">Click Here!</a></p>
                 <div class="btn-field">
-                    <button type="button">Login in</button>
-                    <button type="button" class="disable">Sign Up</button>
+                    <button type="button" id="login">Login in</button>
+                    <button type="button" id="signUp" class="disable">Sign Up</button>
                 </div>
             </form>
 
         </div>
     </div>
 </body>
+
+<script>
+    let signUpBtn = document.getElementById("signUp")
+    let login = document.getElementById("login")
+    let title = document.getElementById("title")
+    let nameField = document.getElementById("nameField")
+
+    signUpBtn.onclick = () => {
+        nameField.style.maxHeight = "0";
+        title.innerHTML = "SignUp"
+        login.classList.add("disable")
+        signUpBtn.classList.remove("disable")
+    }
+
+    login.onclick = () => {
+        nameField.style.maxHeight = "64px";
+        title.innerHTML = "Login"
+        signUpBtn.classList.add("disable")
+        login.classList.remove("disable")
+    }
+
+</script>
 
 </html>

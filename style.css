@@ -49,18 +49,19 @@
     border-radius: 3px;
     display: flex;
     align-items: center;
-    justify-items: center;
+    max-height: 65px;
+    transition: max-height 0.5s;
+    overflow: hidden;
+}
+.input-field i {
+    margin-left: 13px;
 }
 input{
     width:100%;
     background: transparent;
     border: 0;
     outline: 0;
-    padding: 11px 13px;
-}
-.input-field i {
-    margin-left: 15px;
-    color:#999;
+    padding: 19px 20px;
 }
 form p{
     text-align:left;
@@ -72,7 +73,8 @@ form p a {
 }
 .btn-field{
     width: 100%;
-    padding: 10px 12px;
+    margin-top: 10px;
+    padding: 10px 0px;
     display: flex;
     justify-content:space-between;
 }
@@ -88,7 +90,7 @@ form p a {
     transition: background 1s;
 }
 .input-group{
-    height: 23vh;
+    height: 30vh;
 }
 .btn-field button.disable{
     background: #eaeaea;
