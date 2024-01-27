@@ -16,7 +16,7 @@
             <h1 id="title">
                 Sign Up
             </h1>
-            <form action="">
+            <form action="login.php" method="get"  id="myForm">
 
                 <div class="input-group">
                     <div class="input-field" id="nameField">
@@ -34,8 +34,8 @@
                 </div>
                 <p>Lost Password <a href="#">Click Here!</a></p>
                 <div class="btn-field">
-                    <button type="button" id="login">Login in</button>
-                    <button type="button" id="signUp" class="disable">Sign Up</button>
+                    <button type="submit" id="login">Login in</button>
+                    <button type="submit" id="signUp" class="disable">Sign Up</button>
                 </div>
             </form>
 
@@ -50,18 +50,37 @@
     let nameField = document.getElementById("nameField")
 
     signUpBtn.onclick = () => {
-        nameField.style.maxHeight = "0";
-        title.innerHTML = "SignUp"
-        login.classList.add("disable")
-        signUpBtn.classList.remove("disable")
+
+        if (signUpBtn.classList.contains("disable")) {
+            nameField.style.maxHeight = "0";
+            title.innerHTML = "SignUp";
+            login.classList.add("disable");
+            signUpBtn.classList.remove("disable");
+            var myForm = document.getElementById('myForm');
+            myForm.action = "signup.php";
+            return false;
+        }
+        else {
+            return true
+        }
+
     }
 
     login.onclick = () => {
-        nameField.style.maxHeight = "64px";
-        title.innerHTML = "Login"
-        signUpBtn.classList.add("disable")
-        login.classList.remove("disable")
+        if (login.classList.contains("disable")) {
+            nameField.style.maxHeight = "64px";
+            title.innerHTML = "Login";
+            signUpBtn.classList.add("disable");
+            login.classList.remove("disable");
+            var myForm = document.getElementById('myForm');
+            myForm.action = "login.php";
+            return false;
+        }
+        else {
+            return true;
+        }
     }
+
 
 </script>
 
