@@ -8,16 +8,16 @@
     <link rel="stylesheet" href="style.css">
     <script src="https://kit.fontawesome.com/81b4f143c3.js" crossorigin="anonymous"></script>
 </head>
-
 <body>
+<?php 
+include "nav.html";
+?>
     <div class="container">
-
         <div class="form-box">
             <h1 id="title">
                 Sign Up
             </h1>
-            <form action="" method="post"  id="myForm">
-
+            <form action="login.php" method="get"  id="myForm">
                 <div class="input-group">
                     <div class="input-field" id="nameField">
                         <i class="fa-solid fa-user"></i>
@@ -25,7 +25,7 @@
                     </div>
                     <div class="input-field">
                         <i class="fa-solid fa-envelope"></i>
-                        <input type="email" name="email" placeholder="email">
+                        <input type="text" name="email" placeholder="email">
                     </div>
                     <div class="input-field">
                         <i class="fa-solid fa-lock"></i>
